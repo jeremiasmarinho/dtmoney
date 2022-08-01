@@ -26,7 +26,7 @@ export const Container = styled.div`
       }
 
       &.deposit {
-        color: var(--blue);
+        color: var(--blue-light);
       }
       &.withdraw {
         color: var(--red);
