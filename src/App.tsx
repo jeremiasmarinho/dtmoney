@@ -4,12 +4,14 @@ import { Dashboard } from "./components/Dashboard/Index";
 import { Header } from "./components/Header";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 import { GlobalStyle } from "./styles/global";
+import { TransactionsProvider } from "./TransactionsContext";
 
 Modal.setAppElement('#root');
 
 export function App() {
   const [isNewTransactionModalOpen, setNewTransactionModalOpen] = useState(false);
-  
+ 
+
   function handleOpenNewTransactionModal(){
     setNewTransactionModalOpen(true);
   }
@@ -19,7 +21,7 @@ export function App() {
   }
   
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNewTransitionModal={handleOpenNewTransactionModal}/>
       <Dashboard />
 
@@ -30,6 +32,6 @@ export function App() {
       />
      
       <GlobalStyle />
-    </>
+    </TransactionsProvider>
   );
 };
